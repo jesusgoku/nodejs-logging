@@ -12,6 +12,8 @@
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
     "poetic": "^1.5.0"
   }
 }
