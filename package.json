@@ -1,0 +1,7 @@
+{
+  "name": "loggin-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jesús Urrutia <jesus.urrutia@gmail.com>",
+  "license": "MIT"
+}
