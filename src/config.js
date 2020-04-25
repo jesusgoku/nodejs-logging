@@ -1,6 +1,3 @@
-const { PORT = 3000 } = process.env;
+const { APP_NAME = 'logging-tutorial', PORT = 3000, LOG_LEVEL = 'DEBUG' } = process.env;
 
-export {
-  // eslint-disable-next-line import/prefer-default-export
-  PORT,
-};
+export { APP_NAME, PORT, LOG_LEVEL };
