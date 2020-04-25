@@ -1,25 +1,23 @@
-/* eslint-disable no-console */
-const posts = {};
+import logger from '../../logger';
+import posts from './store';
 
 function get(req, res) {
-  try {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const post = posts[id];
+  const post = posts[id];
 
-    if (!post) {
-      console.log(`Post with id ${id} was not found`);
-
-      res.status(404).json({ error: 'Post not found' });
-      return;
-    }
-
-    res.json({ post });
-  } catch (e) {
-    console.log(e);
-
-    res.status(500).json({ error: 'Something went wrong' });
+  if (Math.random() > 0.5) {
+    throw new Error('Store access fail');
   }
+
+  if (!post) {
+    logger.warn(`Post with id ${id} was not found`);
+
+    res.status(404).json({ error: 'Post not found' });
+    return;
+  }
+
+  res.json({ post });
 }
 
 export {
